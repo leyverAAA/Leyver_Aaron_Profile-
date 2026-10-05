@@ -1,0 +1,11 @@
+{
+  "name": "infrafolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.0.0",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Static site ready in public/')\""
+  }
+}
