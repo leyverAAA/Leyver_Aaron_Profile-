@@ -2,10 +2,36 @@
   "name": "infrafolio",
   "version": "1.0.0",
   "private": true,
+  "description": "Portafolio personal de Leyver Aarón González Mendoza — infraestructura cloud, DevOps y automatización.",
+  "keywords": [
+    "portfolio",
+    "devops",
+    "cloud-infrastructure",
+    "terraform",
+    "kubernetes",
+    "linux",
+    "static-site"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Leyver Aarón González Mendoza",
+    "url": "https://github.com/leyverAAA"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leyverAAA/Leyver_Aaron_Profile-.git"
+  },
+  "homepage": "https://leyveraaa.github.io/Leyver_Aaron_Profile-/",
+  "bugs": {
+    "url": "https://github.com/leyverAAA/Leyver_Aaron_Profile-/issues"
+  },
   "type": "module",
-  "packageManager": "pnpm@11.0.0",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "start": "node server.js",
     "dev": "node server.js",
-    "build": "node -e \"console.log('Static site ready in public/')\""
+    "build": "node -e \"console.log('Sitio estatico listo en public/')\""
   }
 }

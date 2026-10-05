@@ -1,0 +1,16 @@
+# Normaliza finales de linea en el repositorio (evita diffs por CRLF en Windows)
+* text=auto eol=lf
+
+# Archivos que deben permanecer binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+
+# Slug y licencia se muestran tal cual en GitHub
+LICENSE text eol=lf
