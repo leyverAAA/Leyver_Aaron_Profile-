@@ -2,7 +2,9 @@
 
 Portafolio personal de **Leyver Aarón González Mendoza** — infraestructura cloud, DevOps, automatización y operación de Linux.
 
-Sitio estático de una sola página. **Cero dependencias**, sin framework, sin paso de build. Solo HTML, CSS y JavaScript nativo servidos por un servidor estático mínimo escrito con el módulo `node:http`.
+Sitio estático de una sola página. **Sin framework y sin paso de build**: HTML, CSS y JavaScript nativo servidos por un servidor estático mínimo escrito con el módulo `node:http`.
+
+La única librería es **GSAP 3.13 + ScrollTrigger**, vendorizada en `public/vendor/` (gratuita, incluso para uso comercial). No se instala con npm: los archivos se sirven tal cual, igual que el resto del sitio.
 
 ---
 
@@ -12,9 +14,9 @@ Sitio estático de una sola página. **Cero dependencias**, sin framework, sin p
 | --- | --- |
 | Marcado | HTML5 semántico |
 | Estilos | CSS3 (custom properties, grid, `clamp()`) |
-| Interactividad | JavaScript nativo (ES modules) |
+| Interactividad | JavaScript nativo + GSAP 3.13 / ScrollTrigger |
 | Servidor | Node.js `node:http` + `node:fs` |
-| Dependencias | Ninguna |
+| Dependencias npm | Ninguna |
 | Deploy | GitHub Actions → GitHub Pages |
 
 ---
@@ -29,8 +31,10 @@ infrafolio/
 ├── public/                # Raíz servida (site root)
 │   ├── index.html         # Documento único, todas las secciones
 │   ├── styles.css         # Sistema visual completo
-│   ├── app.js             # Terminal, reveal-on-scroll, rail nav
-│   └── favicon.svg        # Ícono [L/A]
+│   ├── app.js             # Terminal, reveal, rail nav, motion
+│   ├── favicon.svg        # Ícono [L/A]
+│   ├── img/projects/      # Capturas (ver README dentro)
+│   └── vendor/            # GSAP + ScrollTrigger minificados
 ├── server.js              # Servidor estático de desarrollo
 ├── package.json
 ├── LICENSE                # MIT
@@ -87,14 +91,20 @@ $env:PORT=8080; npm start  # Windows PowerShell
 
 **Rendimiento**
 
-- Sin dependencias que descargar: cero JavaScript de terceros.
+- Sin dependencias que instalar ni cadena de build. GSAP se carga con `defer` y solo se inicializa si el usuario no prefiere movimiento reducido.
 - Tipografías desde Google Fonts con `preconnect` para anticipar la conexión.
 - Animaciones de entrada mediante `IntersectionObserver` (no en scroll), con desconexión tras la primera aparición.
+- Las capturas de proyecto usan `loading="lazy"` y `aspect-ratio` para evitar desplazamiento de layout al cargar.
 
 **Diseño responsive**
 
 - Mobile-first con tipografía fluida vía `clamp()`.
 - Navegación lateral colapsada a ≤ 740 px, donde la terminal rota sin efecto de escritura carácter por carácter.
+- La tarjeta de proyecto pasa de 5 columnas a 3 (≤ 1050 px) y luego a 2 con la imagen a ancho completo (≤ 740 px).
+
+**Tarjetas de proyecto**
+
+Cada tarjeta admite una captura en `.project-media`. Si el archivo no existe, un placeholder generado en CSS con el número y la tecnología del proyecto ocupa su lugar, así que nunca se ve una imagen rota. Las rutas y las reglas de formato están en `public/img/projects/README.md`.
 
 **Seguridad del servidor**
 

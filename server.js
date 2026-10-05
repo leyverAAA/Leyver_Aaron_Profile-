@@ -6,11 +6,19 @@ import { fileURLToPath } from "node:url";
 const root = join(fileURLToPath(new URL(".", import.meta.url)), "public");
 const port = Number(process.env.PORT || 3000);
 const mimeTypes = {
+  ".avif": "image/avif",
   ".css": "text/css; charset=utf-8",
+  ".gif": "image/gif",
   ".html": "text/html; charset=utf-8",
+  ".ico": "image/x-icon",
+  ".jpeg": "image/jpeg",
+  ".jpg": "image/jpeg",
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
+  ".png": "image/png",
   ".svg": "image/svg+xml",
+  ".webp": "image/webp",
+  ".woff2": "font/woff2",
 };
 
 createServer((request, response) => {

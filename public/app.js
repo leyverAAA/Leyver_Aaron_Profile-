@@ -114,3 +114,66 @@ if ("IntersectionObserver" in window && railLinks.length) {
   );
   sections.forEach((section) => sectionObserver.observe(section));
 }
+
+// --- Imagen de proyecto: placeholder hasta que el archivo carga ---
+// El <img> arranca en opacity:0, asi que si el archivo no existe el
+// placeholder queda visible en lugar de un icono de imagen rota.
+document.querySelectorAll(".project-media img").forEach((image) => {
+  const figure = image.closest(".project-media");
+  if (image.complete && image.naturalWidth > 0) {
+    figure.classList.add("is-loaded");
+    return;
+  }
+  image.addEventListener("load", () => figure.classList.add("is-loaded"), { once: true });
+});
+
+// --- GSAP + ScrollTrigger: solo en la seccion de proyectos ---
+// No se inicializa bajo prefers-reduced-motion: el contenido queda en su
+// estado final legible. Si GSAP no esta disponible, tampoco se oculta nada,
+// porque el encabezado no lleva la clase .reveal.
+function initProjectsMotion() {
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.querySelector(".projects-header");
+  const cards = gsap.utils.toArray(".project-card");
+
+  // Un solo reveal para la seccion (encabezado + tarjetas) en vez de tres
+  // animaciones sueltas: la guia marca como severidad ALTA animar mas de
+  // 1-2 elementos por vista.
+  if (header) {
+    const items = header ? [...header.children] : [];
+    const targets = [...items, ...cards];
+
+    if (targets.length) {
+      gsap.from(targets, {
+        opacity: 0,
+        y: 16,
+        duration: 0.45,
+        ease: "power1.out",
+        stagger: 0.07,
+        scrollTrigger: { trigger: header, start: "top 85%" },
+      });
+    }
+  }
+
+  // Parallax leve sobre la media mientras la tarjeta cruza el viewport.
+  // Rango pequeno a proposito: se percibe sin marear. Usa transform, asi que
+  // el hover de la imagen se resuelve con filter (ver styles.css).
+  document.querySelectorAll(".project-media img").forEach((image) => {
+    const frame = image.closest(".project-media");
+    if (!frame) return;
+    gsap.fromTo(
+      image,
+      { yPercent: -4 },
+      {
+        yPercent: 4,
+        ease: "none",
+        scrollTrigger: { trigger: frame, start: "top bottom", end: "bottom top", scrub: true },
+      },
+    );
+  });
+}
+
+initProjectsMotion();

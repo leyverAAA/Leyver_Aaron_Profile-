@@ -138,7 +138,7 @@
             </div>
           </section>
 
-          <section class="projects-section section-grid reveal" id="projects" aria-labelledby="projects-title">
+          <section class="projects-section section-grid" id="projects" aria-labelledby="projects-title">
             <div class="section-number">03<br /><span>PROYECTOS</span></div>
             <div class="projects-inner">
               <div class="projects-header">
@@ -146,24 +146,36 @@
                 <span class="project-count">03 ARCHIVOS</span>
               </div>
               <div class="project-list">
-              <article class="project-card project-primary">
-                <div class="project-number">01</div>
-                <div class="project-intro"><p class="project-type">OPERATIONS / LINUX</p><h3>DevOps-<br />Toolkit</h3></div>
-                <div class="project-detail"><p>Operación Linux para producción. Toolkit orientado a la administración y automatización de infraestructura Linux mediante herramientas de línea de comandos.</p><p class="focus"><span>ENFOQUE</span> Linux ➔ System Administration, Bash Automation, Infrastructure Operations, Production Utilities.</p><div class="tech-tags"><span>LINUX</span><span>BASH</span><span>DEVOPS</span></div></div>
-                <a class="project-link" href="https://github.com/leyverAAA/DevOps-Toolkit" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio DevOps Toolkit">REPOSITORIO <b>↗</b></a>
-              </article>
-              <article class="project-card">
-                <div class="project-number">02</div>
-                <div class="project-intro"><p class="project-type">METRICS / INSIGHT</p><h3>Monitoring &amp;<br />Observability</h3></div>
-                <div class="project-detail"><p>Monitoreo de infraestructura y servicios. Visualización del estado de servicios mediante métricas y dashboards.</p><p class="focus"><span>ENFOQUE</span> Service ➔ Prometheus ➔ Metrics ➔ Grafana ➔ Dashboards.</p><div class="tech-tags"><span>PROMETHEUS</span><span>GRAFANA</span></div></div>
-                <span class="project-link muted">REPOSITORIO PENDIENTE <b>⌁</b></span>
-              </article>
-              <article class="project-card">
-                <div class="project-number">03</div>
-                <div class="project-intro"><p class="project-type">CLOUD / REPEATABILITY</p><h3>Infrastructure<br />Automation</h3></div>
-                <div class="project-detail"><p>Infraestructura reproducible mediante código. Exploración práctica de automatización de infraestructura cloud utilizando Terraform y servicios de AWS/GCP.</p><p class="focus"><span>PRINCIPIO</span> La configuración también es arquitectura.</p><div class="tech-tags"><span>TERRAFORM</span><span>AWS</span><span>GCP</span></div></div>
-                <span class="project-link muted">EN CONSTRUCCIÓN <b>⌁</b></span>
-              </article>
+                <article class="project-card">
+                  <div class="project-number">01</div>
+                  <div class="project-intro"><p class="project-type">OPERATIONS / LINUX</p><h3>DevOps-<br />Toolkit</h3></div>
+                  <figure class="project-media">
+                    <span class="media-fallback" aria-hidden="true"><b>01</b>LINUX</span>
+                    <img src="/img/projects/devops-toolkit.webp" alt="Captura de la interfaz de linea de comandos del DevOps Toolkit" width="480" height="300" loading="lazy" decoding="async" />
+                  </figure>
+                  <div class="project-detail"><p>Operación Linux para producción. Toolkit orientado a la administración y automatización de infraestructura Linux mediante herramientas de línea de comandos.</p><p class="focus"><span>ENFOQUE</span> Linux ➔ System Administration, Bash Automation, Infrastructure Operations, Production Utilities.</p><div class="tech-tags"><span>LINUX</span><span>BASH</span><span>DEVOPS</span></div></div>
+                  <a class="project-link" href="https://github.com/leyverAAA/DevOps-Toolkit" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio DevOps Toolkit">REPOSITORIO <b>↗</b></a>
+                </article>
+                <article class="project-card">
+                  <div class="project-number">02</div>
+                  <div class="project-intro"><p class="project-type">METRICS / INSIGHT</p><h3>Monitoring &amp;<br />Observability</h3></div>
+                  <figure class="project-media">
+                    <span class="media-fallback" aria-hidden="true"><b>02</b>PROMETHEUS</span>
+                    <img src="/img/projects/monitoring-observability.webp" alt="Dashboard de Grafana con metricas de servicio" width="480" height="300" loading="lazy" decoding="async" />
+                  </figure>
+                  <div class="project-detail"><p>Monitoreo de infraestructura y servicios. Visualización del estado de servicios mediante métricas y dashboards.</p><p class="focus"><span>ENFOQUE</span> Service ➔ Prometheus ➔ Metrics ➔ Grafana ➔ Dashboards.</p><div class="tech-tags"><span>PROMETHEUS</span><span>GRAFANA</span></div></div>
+                  <span class="project-link muted">REPOSITORIO PENDIENTE <b>⌁</b></span>
+                </article>
+                <article class="project-card">
+                  <div class="project-number">03</div>
+                  <div class="project-intro"><p class="project-type">CLOUD / REPEATABILITY</p><h3>Infrastructure<br />Automation</h3></div>
+                  <figure class="project-media">
+                    <span class="media-fallback" aria-hidden="true"><b>03</b>TERRAFORM</span>
+                    <img src="/img/projects/infrastructure-automation.webp" alt="Salida de terraform plan mostrando la infraestructura que se va a desplegar" width="480" height="300" loading="lazy" decoding="async" />
+                  </figure>
+                  <div class="project-detail"><p>Infraestructura reproducible mediante código. Exploración práctica de automatización de infraestructura cloud utilizando Terraform y servicios de AWS/GCP.</p><p class="focus"><span>PRINCIPIO</span> La configuración también es arquitectura.</p><div class="tech-tags"><span>TERRAFORM</span><span>AWS</span><span>GCP</span></div></div>
+                  <span class="project-link muted">EN CONSTRUCCIÓN <b>⌁</b></span>
+                </article>
               </div>
             </div>
           </section>
@@ -234,6 +246,8 @@
         </footer>
       </div>
     </div>
+    <script src="/vendor/gsap.min.js" defer></script>
+    <script src="/vendor/ScrollTrigger.min.js" defer></script>
     <script src="/app.js" defer></script>
   </body>
 </html>
