@@ -30,11 +30,13 @@
           <span>[L/A]</span><i></i>
         </a>
         <span class="rail-index">INFRA / 01</span>
-        <nav class="rail-nav" aria-label="Navegación secundaria">
+        <nav class="rail-nav" aria-label="Índice de secciones">
           <a href="#whoami"><span>01</span>Perfil</a>
-          <a href="#projects"><span>02</span>Obras</a>
-          <a href="#learning"><span>03</span>En curso</a>
-          <a href="#contact"><span>04</span>Contacto</a>
+          <a href="#stack"><span>02</span>Stack</a>
+          <a href="#projects"><span>03</span>Obras</a>
+          <a href="#philosophy"><span>04</span>Loop</a>
+          <a href="#learning"><span>05</span>En curso</a>
+          <a href="#contact"><span>06</span>Contacto</a>
         </nav>
         <span class="rail-note">MX<br />2026</span>
       </aside>
@@ -66,7 +68,7 @@
             </div>
 
             <div class="terminal-wrap" aria-label="Terminal de especialidades técnicas">
-              <div class="orbital-stamp" aria-hidden="true"><span>RELIABLE SYSTEMS • RELIABLE SYSTEMS •</span><b>↘</b></div>
+              <div class="orbital-stamp" aria-hidden="true"><b>↘</b></div>
               <div class="terminal-window">
                 <div class="terminal-bar"><span></span><span></span><span></span><b>ops@leyver: ~</b><i>● LIVE</i></div>
                 <div class="terminal-body">
@@ -118,27 +120,32 @@
             </div>
           </section>
 
-          <section class="stack-section reveal" id="stack" aria-labelledby="stack-title">
-            <div class="stack-heading-row">
-              <div><p class="command-label">&gt; stack --overview</p><h2 id="stack-title">Mi Stack<br /><em>Tecnologico</em></h2></div>
-              <p class="section-aside">Herramientas que convierten<br />intención en operación.</p>
-            </div>
-            <div class="stack-lines">
-              <article class="stack-line"><span class="stack-id">01 / CLOUD &amp; INFRA</span><h3>AWS <i>·</i> GCP <i>·</i> Terraform</h3><span class="stack-arrow">↗</span></article>
-              <article class="stack-line"><span class="stack-id">02 / CONTAINERS</span><h3>Docker <i>·</i> Kubernetes</h3><span class="stack-arrow">↗</span></article>
-              <article class="stack-line"><span class="stack-id">03 / CI/CD &amp; GIT</span><h3>GitHub Actions <i>·</i> GitHub</h3><span class="stack-arrow">↗</span></article>
-              <article class="stack-line"><span class="stack-id">04 / OBSERVABILITY</span><h3>Prometheus <i>·</i> Grafana</h3><span class="stack-arrow">↗</span></article>
-              <article class="stack-line"><span class="stack-id">05 / LANGUAGES</span><h3>Python <i>·</i> Bash <i>·</i> Java</h3><span class="stack-arrow">↗</span></article>
-              <article class="stack-line"><span class="stack-id">06 / DATA</span><h3>MySQL <i>·</i> Firebase <i>·</i> Postgres</h3><span class="stack-arrow">↗</span></article>
+          <section class="stack-section section-grid reveal" id="stack" aria-labelledby="stack-title">
+            <div class="section-number">02<br /><span>STACK</span></div>
+            <div class="stack-inner">
+              <div class="stack-heading-row">
+                <div><p class="command-label">&gt; stack --overview</p><h2 id="stack-title">Mi Stack<br /><em>Tecnologico</em></h2></div>
+                <p class="section-aside">Herramientas que convierten<br />intención en operación.</p>
+              </div>
+              <div class="stack-lines">
+                <article class="stack-line"><span class="stack-id">01 / CLOUD &amp; INFRA</span><h3>AWS <i>·</i> GCP <i>·</i> Terraform</h3><span class="stack-arrow">↗</span></article>
+                <article class="stack-line"><span class="stack-id">02 / CONTAINERS</span><h3>Docker <i>·</i> Kubernetes</h3><span class="stack-arrow">↗</span></article>
+                <article class="stack-line"><span class="stack-id">03 / CI/CD &amp; GIT</span><h3>GitHub Actions <i>·</i> GitHub</h3><span class="stack-arrow">↗</span></article>
+                <article class="stack-line"><span class="stack-id">04 / OBSERVABILITY</span><h3>Prometheus <i>·</i> Grafana</h3><span class="stack-arrow">↗</span></article>
+                <article class="stack-line"><span class="stack-id">05 / LANGUAGES</span><h3>Python <i>·</i> Bash <i>·</i> Java</h3><span class="stack-arrow">↗</span></article>
+                <article class="stack-line"><span class="stack-id">06 / DATA</span><h3>MySQL <i>·</i> Firebase <i>·</i> Postgres</h3><span class="stack-arrow">↗</span></article>
+              </div>
             </div>
           </section>
 
-          <section class="projects-section reveal" id="projects" aria-labelledby="projects-title">
-            <div class="projects-header">
-              <div><p class="command-label">&gt; projects --featured</p><h2 id="projects-title">Mis proyectos<br /><em>Destacados</em></h2></div>
-              <span class="project-count">03 ARCHIVOS</span>
-            </div>
-            <div class="project-list">
+          <section class="projects-section section-grid reveal" id="projects" aria-labelledby="projects-title">
+            <div class="section-number">03<br /><span>PROYECTOS</span></div>
+            <div class="projects-inner">
+              <div class="projects-header">
+                <div><p class="command-label">&gt; projects --featured</p><h2 id="projects-title">Mis proyectos<br /><em>Destacados</em></h2></div>
+                <span class="project-count">03 ARCHIVOS</span>
+              </div>
+              <div class="project-list">
               <article class="project-card project-primary">
                 <div class="project-number">01</div>
                 <div class="project-intro"><p class="project-type">OPERATIONS / LINUX</p><h3>DevOps-<br />Toolkit</h3></div>
@@ -157,14 +164,20 @@
                 <div class="project-detail"><p>Infraestructura reproducible mediante código. Exploración práctica de automatización de infraestructura cloud utilizando Terraform y servicios de AWS/GCP.</p><p class="focus"><span>PRINCIPIO</span> La configuración también es arquitectura.</p><div class="tech-tags"><span>TERRAFORM</span><span>AWS</span><span>GCP</span></div></div>
                 <span class="project-link muted">EN CONSTRUCCIÓN <b>⌁</b></span>
               </article>
+              </div>
             </div>
           </section>
 
-          <section class="philosophy-section reveal" aria-labelledby="philosophy-title">
-            <div class="philosophy-header"><p class="command-label">&gt; philosophy</p><span>// LOOP 01</span></div>
-            <h2 id="philosophy-title">La automatización no consiste únicamente en reducir comandos manuales.</h2>
-            <div class="process-flow" aria-label="Proceso de mejora continua"><span>REPETIDOS</span><i>→</i><span>MEDIDOS</span><i>→</i><span>ENTENDIDOS</span><i>→</i><span>MEJORADOS</span></div>
-            <p class="philosophy-note">Se trata de construir sistemas donde los procesos puedan ser documentados, repetidos y operados con claridad.</p>
+          <section class="philosophy-section section-grid reveal" id="philosophy" aria-labelledby="philosophy-title">
+            <div class="section-number">04<br /><span>LOOP</span></div>
+            <div class="philosophy-inner">
+              <div class="philosophy-header"><p class="command-label">&gt; philosophy</p><span>// LOOP 01</span></div>
+              <h2 id="philosophy-title">La automatización no consiste únicamente en reducir comandos manuales.</h2>
+              <div class="philosophy-foot">
+                <div class="process-flow" aria-label="Proceso de mejora continua"><span>REPETIDOS</span><i>→</i><span>MEDIDOS</span><i>→</i><span>ENTENDIDOS</span><i>→</i><span>MEJORADOS</span></div>
+                <p class="philosophy-note">Se trata de construir sistemas donde los procesos puedan ser documentados, repetidos y operados con claridad.</p>
+              </div>
+            </div>
           </section>
 
           <section class="two-up-section reveal" aria-label="Logros e intereses">
@@ -185,25 +198,31 @@
             </article>
           </section>
 
-          <section class="learning-section reveal" id="learning" aria-labelledby="learning-title">
-            <div class="learning-intro"><p class="command-label">&gt; currently_learning</p><h2 id="learning-title">LA PRÓXIMA<br /><em>ITERACIÓN</em></h2><p>Mi objetivo es continuar evolucionando hacia un perfil capaz de <strong>diseñar, automatizar, desplegar y operar infraestructura cloud moderna.</strong></p></div>
-            <div class="learning-bars" aria-label="Niveles de aprendizaje actuales">
-              <div class="learning-bar"><div><span>Cloud Engineering</span><b>10 / 10</b></div><i style="--progress:100%"></i></div>
-              <div class="learning-bar"><div><span>DevOps</span><b>09 / 10</b></div><i style="--progress:90%"></i></div>
-              <div class="learning-bar"><div><span>Linux &amp; Automation</span><b>09 / 10</b></div><i style="--progress:90%"></i></div>
-              <div class="learning-bar"><div><span>Kubernetes</span><b>07 / 10</b></div><i style="--progress:70%"></i></div>
-              <div class="learning-bar"><div><span>Observability</span><b>06 / 10</b></div><i style="--progress:60%"></i></div>
+          <section class="learning-section section-grid reveal" id="learning" aria-labelledby="learning-title">
+            <div class="section-number">05<br /><span>APRENDIZAJE</span></div>
+            <div class="learning-inner">
+              <div class="learning-intro"><p class="command-label">&gt; currently_learning</p><h2 id="learning-title">LA PRÓXIMA<br /><em>ITERACIÓN</em></h2><p>Mi objetivo es continuar evolucionando hacia un perfil capaz de <strong>diseñar, automatizar, desplegar y operar infraestructura cloud moderna.</strong></p></div>
+              <div class="learning-bars" aria-label="Niveles de aprendizaje actuales">
+                <div class="learning-bar"><div><span>Cloud Engineering</span><b>10 / 10</b></div><i style="--progress:100%"></i></div>
+                <div class="learning-bar"><div><span>DevOps</span><b>09 / 10</b></div><i style="--progress:90%"></i></div>
+                <div class="learning-bar"><div><span>Linux &amp; Automation</span><b>09 / 10</b></div><i style="--progress:90%"></i></div>
+                <div class="learning-bar"><div><span>Kubernetes</span><b>07 / 10</b></div><i style="--progress:70%"></i></div>
+                <div class="learning-bar"><div><span>Observability</span><b>06 / 10</b></div><i style="--progress:60%"></i></div>
+              </div>
             </div>
           </section>
 
-          <section class="contact-section reveal" id="contact" aria-labelledby="contact-title">
-            <div class="contact-topline"><p class="command-label">&gt; contact --open</p><span><i class="pulse"></i> DISPONIBLE PARA COLABORAR</span></div>
-            <h2 id="contact-title">¿Construimos<br /><em>algo confiable?</em></h2>
-            <p>Estoy abierto a oportunidades, proyectos y colaboraciones relacionadas con <strong>Cloud Engineering · DevOps · Infrastructure · Automation</strong>.</p>
-            <div class="contact-links">
-              <a href="mailto:gonzalezleyver6@gmail.com"><span>EMAIL</span> gonzalezleyver6@gmail.com <b>↗</b></a>
-              <a href="https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span> /in/leyver-aaron-gonzalez-mendoza <b>↗</b></a>
-              <a href="https://github.com/leyverAAA" target="_blank" rel="noopener noreferrer"><span>GITHUB</span> /leyverAAA <b>↗</b></a>
+          <section class="contact-section section-grid reveal" id="contact" aria-labelledby="contact-title">
+            <div class="section-number">06<br /><span>CONTACTO</span></div>
+            <div class="contact-inner">
+              <div class="contact-topline"><p class="command-label">&gt; contact --open</p><span><i class="pulse"></i> DISPONIBLE PARA COLABORAR</span></div>
+              <h2 id="contact-title">¿Construimos<br /><em>algo confiable?</em></h2>
+              <p>Estoy abierto a oportunidades, proyectos y colaboraciones relacionadas con <strong>Cloud Engineering · DevOps · Infrastructure · Automation</strong>.</p>
+              <div class="contact-links">
+                <a href="mailto:gonzalezleyver6@gmail.com"><span>EMAIL</span> gonzalezleyver6@gmail.com <b>↗</b></a>
+                <a href="https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span> /in/leyver-aaron-gonzalez-mendoza <b>↗</b></a>
+                <a href="https://github.com/leyverAAA" target="_blank" rel="noopener noreferrer"><span>GITHUB</span> /leyverAAA <b>↗</b></a>
+              </div>
             </div>
           </section>
         </main>
