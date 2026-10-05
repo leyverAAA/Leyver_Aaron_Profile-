@@ -32,6 +32,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "node -e \"console.log('Sitio estatico listo en public/')\""
+    "build": "node -e \"console.log('Sitio estatico listo en public/')\"",
+    "test": "node scripts/check.mjs"
   }
 }

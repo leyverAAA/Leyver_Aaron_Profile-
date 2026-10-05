@@ -1,11 +1,10 @@
-﻿:root {
+:root {
   --ink: #0b0d0c;
   --ink-soft: #131715;
   --paper: #e9ece5;
   --paper-dim: #b7bcb3;
   --acid: #c8ff3d;
   --amber: #ffb44b;
-  --blue: #8bc7ff;
   --line: rgba(233, 236, 229, 0.17);
   --muted: #7e877e;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -50,7 +49,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .topbar { height: 84px; padding: 0 clamp(22px, 4vw, 64px); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 18px; position: sticky; top: 0; z-index: 20; background: rgba(11,13,12,.80); backdrop-filter: blur(14px); }
 .wordmark { display: flex; align-items: center; gap: 10px; font: 10px/1.05 var(--mono); letter-spacing: .1em; }
 .wordmark strong { color: var(--acid); font-weight: 500; }
-.wordmark-symbol { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid var(--acid); color: var(--acid); font-size: 19px; }
 .topbar-status { display: flex; align-items: center; gap: 8px; font: 10px var(--mono); color: var(--paper-dim); letter-spacing: .08em; margin-left: auto; }
 .pulse { width: 7px; height: 7px; display: inline-block; flex: 0 0 7px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 0 0 rgba(200,255,61,.55); animation: pulse 2s infinite; }
 .topbar-cta { font: 600 10px var(--mono); letter-spacing: .05em; padding: 11px 14px; background: var(--acid); color: var(--ink); transition: transform .2s ease, background .2s ease; }

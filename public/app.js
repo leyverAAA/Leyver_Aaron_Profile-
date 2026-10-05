@@ -107,6 +107,10 @@ if ("IntersectionObserver" in window && railLinks.length) {
         railLinks.forEach((link) => {
           const active = link.getAttribute("href") === `#${entry.target.id}`;
           link.style.color = active ? "var(--paper)" : "";
+          // El color solo no viaja a un lector de pantalla: aria-current marca
+          // la seccion actual en la lista de enlaces del rail.
+          if (active) link.setAttribute("aria-current", "true");
+          else link.removeAttribute("aria-current");
         });
       });
     },

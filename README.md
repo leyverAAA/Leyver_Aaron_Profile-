@@ -27,19 +27,26 @@ La única librería es **GSAP 3.13 + ScrollTrigger**, vendorizada en `public/ven
 infrafolio/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml     # Publicación automática en GitHub Pages
+│       └── deploy.yml     # Verifica y publica en GitHub Pages
 ├── public/                # Raíz servida (site root)
 │   ├── index.html         # Documento único, todas las secciones
 │   ├── styles.css         # Sistema visual completo
 │   ├── app.js             # Terminal, reveal, rail nav, motion
 │   ├── favicon.svg        # Ícono [L/A]
-│   ├── img/projects/      # Capturas (ver README dentro)
+│   ├── og-image.jpg       # Preview 1200×630 para redes sociales
+│   ├── img/projects/      # Capturas WebP (ver README dentro)
 │   └── vendor/            # GSAP + ScrollTrigger minificados
+├── scripts/
+│   └── check.mjs          # Verificación del sitio (sin dependencias)
 ├── server.js              # Servidor estático de desarrollo
 ├── package.json
 ├── LICENSE                # MIT
 └── README.md
 ```
+
+> Las rutas del sitio son **relativas** a propósito. En GitHub Pages un proyecto se sirve
+> bajo `https://<usuario>.github.io/<repo>/`, y una ruta como `/styles.css` apuntaría a la
+> raíz del dominio y devolvería 404. `npm test` lo verifica.
 
 ---
 
@@ -64,6 +71,17 @@ $env:PORT=8080; npm start  # Windows PowerShell
 ```
 
 > No existe un paso de build: `public/` ya es el producto final. El script `build` existe únicamente para confirmar el estado del sitio.
+
+### Verificar antes de publicar
+
+```bash
+npm test
+```
+
+Sin dependencias. Comprueba que cada referencia local exista, que **ninguna ruta sea
+absoluta** (el fallo que dejó producción sin CSS ni JS), que las anchas y referencias
+`aria-*` apunten a ids reales, que no haya ids duplicados y que toda custom property usada
+esté declarada. El mismo script corre como paso previo en el workflow de deploy.
 
 ---
 
@@ -114,7 +132,9 @@ Cada tarjeta admite una captura en `.project-media`. Si el archivo no existe, un
 
 ## Deploy
 
-Cada `push` a `main` dispara `.github/workflows/deploy.yml`, que publica `public/` en GitHub Pages.
+Cada `push` a `main` dispara `.github/workflows/deploy.yml`, que primero corre la
+verificación (`npm test`) y después publica `public/` en GitHub Pages. Si la verificación
+falla, no se publica.
 
 Para activarlo en el repositorio: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 
